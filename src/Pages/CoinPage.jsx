@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LinearProgress, Typography, Box } from "@mui/material";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import CoinInfo from "../components/CoinInfo";
 import { SingleCoin } from "../config/api";
 import { numberWithCommas } from "../utils/formatUtils";
@@ -97,7 +97,7 @@ const CoinPage = () => {
         <Heading variant="h3">{coin?.name || "Loading..."}</Heading>
         <Description variant="subtitle1">
           {coin?.description?.en
-            ? ReactHtmlParser(coin?.description?.en.split(". ")[0])
+            ? parse(coin?.description?.en.split(". ")[0])
             : "Loading description..."}
         </Description>
         <MarketData>
@@ -160,4 +160,3 @@ const CoinPage = () => {
 };
 
 export default CoinPage;
- 
