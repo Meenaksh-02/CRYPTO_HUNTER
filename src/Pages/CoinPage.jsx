@@ -3,7 +3,7 @@ import { LinearProgress, Typography, Box } from "@mui/material";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import parse from "html-react-parser";
-import CoinInfo from "../components/CoinInfo";
+import CoinInfo from "../Components/CoinInfo.jsx";
 import { SingleCoin } from "../config/api";
 import { numberWithCommas } from "../utils/formatUtils";
 import { CryptoState } from "../CryptoContext";
